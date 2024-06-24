@@ -1,0 +1,133 @@
+
+@font-face {
+    font-family: myFirstFont;
+    src: url(fonts/Inter-ExtraBold.ttf);
+}
+
+*{
+    font-family: myFirstFont, Arial, Helvetica, sans-serif;
+}
+
+body{
+    margin-top: 100px;
+    justify-content: center;
+    display: flex;
+    background: linear-gradient(130deg, #e2e2f0 0%, #d8d5d5 100%);
+    background-size: cover;
+}
+
+.weatherContainer{
+    /* margin: auto; */
+    width: 320px;
+    height: 450px;
+}
+
+:root{
+    --border: 2px;
+}
+
+.weatherApp{
+    position: relative;
+    height: 100%;
+    width: 100%;
+    padding: 25px;
+    margin: 10px;
+    
+    color: #272727;
+    background-image: url(images/bg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 6px;
+    box-shadow: 0 3px 7px 3px rgba(241, 236, 236, 0.1);
+    /* backdrop-filter: blur(4.9px);
+    -webkit-backdrop-filter: blur(4.9px); */
+    border: var(--border) transparent;
+    
+}
+
+.weatherApp::before{
+    content: ' ';
+    position: absolute;
+    top: -1px; right: -1px; left: -1px; bottom: -1px;
+    z-index: -1;
+    border-radius: inherit;
+    background: linear-gradient(130deg, #edeef1,rgba(19, 19, 26, 0.367));
+    box-shadow: 0px 1px 7px 3px #133ab166;
+}
+
+.status-led{
+    content: ' ';
+    position: absolute;
+    top: -4%;
+    right: 96%;
+    width: 10px;
+    height: 10px;
+    z-index: 9999;
+    border-radius: 100%;
+    transition: .2s;
+}
+
+.status-led-green{
+    background: #0be212;
+    color: #0be212;
+}
+
+.status-led-red{
+    background: #e2210b;
+    color: #e21d0b;
+}
+
+.weatherLocation{
+    font-family: myFirstFont;
+    font-size: 45px;
+    padding: 5px;
+    margin-left: 20px;
+    font-weight: lighter;
+}
+.weatherLabel{
+    text-decoration: underline;
+}
+
+.weather-content{
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+    /* border: solid 1px white; */
+    padding: 10px;
+    box-shadow: 0px 1px 15px #f6f2f2;
+}
+
+.weatherAPIContent{
+    display: flex;
+}
+
+.weatherIcon{
+    display: flex;
+}
+
+.weatherIcon img{
+    object-fit: cover;
+    width: 100px;
+}
+
+.weatherIcon p{
+    font-weight: lighter;
+    margin: 20px;
+}
+
+.weatherTemperature{
+    font-size: 55px;
+    color: rgb(226, 195, 17);
+    font-weight: 800;
+}
+
+.status-bar{
+    background-color: transparent;
+    color: #1b1c1e;
+    font-weight: 900;
+}
+
+.status-bar p{
+    font-size: 15px; 
+}
